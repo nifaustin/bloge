@@ -3,6 +3,7 @@
  * /api/klab/user/newuser:
  *   post:
  *     summary: Register a new user.
+ *     tags: [users]
  *     requestBody:
  *       content:
  *         multipart/form-data:
@@ -28,6 +29,8 @@
  * /api/klab/user/read:
  *   get:
  *     summary: Get a list of all registered users.
+ *     tags: [users]
+ *     
  *     responses:
  *       200:
  *         description: Successfully retrieved a list of all users.
@@ -36,6 +39,7 @@
  * /api/klab/user/read/{id}:
  *   get:
  *     summary: Get a single user by their ID.
+ *     tags: [users]
  *     parameters:
  *       - in: path
  *         name: id
@@ -54,6 +58,8 @@
  * /api/klab/user/delete/{id}:
  *   delete:
  *     summary: Delete a user by their ID.
+ *     tags: [users]
+ *     
  *     parameters:
  *       - in: path
  *         name: id
@@ -72,6 +78,8 @@
  * /api/klab/user/update/{id}:
  *   put:
  *     summary: Update a user's information by their ID.
+ *     tags: [users]
+ *     
  *     parameters:
  *       - in: path
  *         name: id
@@ -103,27 +111,11 @@
  *         description: User not found with the provided ID.
  *       500:
  *         description: Failed to update user data.
+ * 
 
  */
 
-/**
- * @swagger
- * /api/klab/user/login:
- *   post:
- *     summary: Register a new user.
- *     requestBody:
- *       content:
- *         multipart/form-data:
- *           schema:
- *             type: object
- *             properties:
- *               Email:
- *                 type: string
- *               Password:
- *                 type: string
- *     responses:
- *       200:
- *         description: User login successfully.
- *       500:
- *         description: Registration failed.
- */
+
+
+
+

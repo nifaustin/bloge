@@ -9,12 +9,37 @@ import cors from "cors";
 import statusRoutes from "./routes/ststusRoutes"
 import blogRoutes from "./routes/blogroutes";
 import usersroot from "./routes/userRoutes";
+import swaggerUi from "swagger-ui-express";
+import swaggerJSDoc from "swagger-jsdoc";
+
 
 
 // configuration
 
 const app = express();
 dotenv.config();
+
+// documentation side
+
+const options ={
+    definition: {
+      openapi : '3.0.0',
+      info : {
+        title: 'api project of klab',
+        version: '1.0.0'
+      },
+      servers:[
+        {
+          // url: 'https://klabblogapi.onrender.com/'
+          url: 'http://localhost:3000/'
+        }
+      ]
+    },
+    apis: ['./src/docs/*.js'], //determination of path
+  }
+  const swaggerSpec = swaggerJSDoc(options)
+  app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec))
+  
 
 app.use(cors());
 app.use(morgan("dev"));

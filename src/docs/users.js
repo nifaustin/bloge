@@ -105,3 +105,25 @@
  *         description: Failed to update user data.
 
  */
+
+/**
+ * @swagger
+ * /api/klab/user/login:
+ *   post:
+ *     summary: Register a new user.
+ *     requestBody:
+ *       content:
+ *         multipart/form-data:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               Email:
+ *                 type: string
+ *               Password:
+ *                 type: string
+ *     responses:
+ *       200:
+ *         description: User login successfully.
+ *       500:
+ *         description: Registration failed.
+ */

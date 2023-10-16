@@ -28,10 +28,24 @@ const options ={
         title: 'api project of klab',
         version: '1.0.0'
       },
+      security: [
+        {
+          BearerAuth: [],
+        },
+      ],
+      components: {
+        securitySchemes: {
+          BearerAuth: {
+            type: 'http',
+            scheme: 'bearer',
+            bearerFormat: 'JWT',
+          },
+        },
+      },
       servers:[
         {
           url: 'https://klabblogapi.onrender.com/'
-          // url: 'http://localhost:3000/'
+          //  url: 'http://localhost:3000/'
         }
       ]
     },

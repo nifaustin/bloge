@@ -22,7 +22,9 @@ authorP:{
     required: false,
 },
 
-
+Comments: {
+    type:Array
+}
 
 });
 

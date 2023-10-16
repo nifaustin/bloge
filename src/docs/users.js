@@ -111,6 +111,28 @@
  *         description: User not found with the provided ID.
  *       500:
  *         description: Failed to update user data.
+ *  
+ * /api/klab/user/login:
+ *   post:
+ *     summary: Authenticate a user for login.
+ *     tags: [users]
+ *     requestBody:
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               Email:
+ *                 type: string
+ *               Password:
+ *                 type: string
+ *     responses:
+ *       200:
+ *         description: User login successful.
+ *       404:
+ *         description: User not found with the provided email or incorrect password.
+ *       500:
+ *         description: Login failed.
  * 
 
  */

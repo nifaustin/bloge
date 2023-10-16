@@ -13,7 +13,7 @@ export const makeComment = async(req,res)=>{
                 message: "Blog Not Found",
             })
         }
-
+// ust any change
         const newComment = await commented({
             author: req.usertable.Lname,
             authorP: req.usertable.Profile,

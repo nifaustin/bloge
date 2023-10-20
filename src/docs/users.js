@@ -115,7 +115,7 @@
  * /api/klab/user/login:
  *   post:
  *     summary: Authenticate a user for login.
- *     tags: [users]
+ *     tags: [login]
  *     requestBody:
  *       content:
  *         application/json:

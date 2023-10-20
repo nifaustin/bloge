@@ -13,14 +13,16 @@
  *               blogImage:
  *                 type: string
  *                 format: binary
- *               Pholder:
+ *               title:
  *                 type: string
- *               description:
+ *               content:
  *                 type: string
  *               author:
  *                 type: string
  *               authorP:
  *                 type: string
+ *               Comments:
+ *                 type: string 
  *           
  *     responses:
  *       200:
@@ -99,13 +101,15 @@
  *               blogImage:
  *                 type: string
  *                 format: binary
- *               Pholder:
+ *               title:
  *                 type: string
- *               description:
+ *               content:
  *                 type: string
  *               author:
  *                 type: string
  *               authorP:
+ *                 type: string
+ *               Comments:
  *                 type: string
  *     responses:
  *       200:

@@ -29,7 +29,7 @@ role:{
 },
 
 
-});
+},{timestamps:true});
 
 const usertable = mongoose.model("user",userschema);
 export default usertable;

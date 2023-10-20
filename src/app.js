@@ -11,6 +11,9 @@ import blogRoutes from "./routes/blogroutes";
 import usersroot from "./routes/userRoutes";
 import swaggerUi from "swagger-ui-express";
 import swaggerJSDoc from "swagger-jsdoc";
+import commentRoutes from "./routes/commentroutes";
+
+
 
 
 
@@ -44,8 +47,8 @@ const options ={
       },
       servers:[
         {
-          url: 'https://klabblogapi.onrender.com/'
-          //  url: 'http://localhost:3000/'
+          // url: 'https://klabblogapi.onrender.com/',
+           url: 'http://localhost:3000/'
         }
       ]
     },
@@ -63,6 +66,8 @@ app.use(bodyParser.urlencoded({extended:false}));
 app.use("/api/klab/info",statusRoutes);
 app.use("/api/klab/blog",blogRoutes);
 app.use("/api/klab/user",usersroot);
+app.use("/api/klab/comment",commentRoutes);
+
 //
 
 app.get("/",(req,res) =>{

@@ -17,14 +17,14 @@ export const userreg = async (req, res) => {
         message: "email exixts",
       });
     }
-    // const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
-    // if (!passwordRegex.test(Password)) {
-    //   return res.status(400).json({
-    //     status: "400",
-    //     message:
-    //       "Password should be at least 8 characters long and contain a mix of numbers and characters",
-    //   });
-    // }
+    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+    if (!passwordRegex.test(Password)) {
+      return res.status(400).json({
+        status: "400",
+        message:
+          "Password should be at least 8 characters long and contain a mix of numbers and characters",
+      });
+    }
     let userImage;
     if (req.file) userImage = await uploadToCloud(req.file, res);
     const salt = await bcrypt.genSalt(10);

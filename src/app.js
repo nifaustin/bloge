@@ -47,8 +47,8 @@ const options ={
       },
       servers:[
         {
-          url: 'https://klabblogapi.onrender.com/',
-          //  url: 'http://localhost:3000/'
+          // url: 'https://klabblogapi.onrender.com/',
+           url: 'http://localhost:4000/'
         }
       ]
     },

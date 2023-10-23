@@ -3,23 +3,31 @@ import blogmodel from "../modules/blogModels";
 import usertable from "../modules/usermodel";
 export const createComment = async (req,res) =>{
  try {
-    const{ content} = req.body;
-    const{ blogId } = req.params;
+    const{ message} = req.body;
+    const{ id } = req.params;
     const user = req.usertable;
-    const comment = await commentModel.create({ content,author: user._id, blog: blogId });
+    const postId = await blogmodel.findById(id);
+    if(!postId)
+    return res.status(404).json({
+  status:"404",
+  message:"id not found try again",
+  data:postId,
+  })
+    const comment = await commentModel.create({
+      message,
+      author: user._id,
+      blog: postId,
+    });
     await blogmodel.findOneAndUpdate(
-        {_id: blogId},
-        {$addToSet:{Comments: comment._id}},
-        {new: true},
-
-
-        
+      { _id: id },
+      { $push: { Comments: comment._id } },
+      { new: true }
     );
   
     return res.status(200).json({
         status:"200",
         message:"Comment created successfully",
-        data:comment,
+        Comments:comment,
     });
  } catch (error) {
     return res.status(500).json({
@@ -35,7 +43,7 @@ export const createComment = async (req,res) =>{
 export const getBlogComments = async (req, res) => {
     try {
       const { blogId } = req.params;
-      const comments = await commentModel.find({ blog: blogId });
+      const comments = await commentModel.find({ blog:blogId  });
       return res.status(200).json({
         status: "200",
         message: "Comments retrieved successfully",

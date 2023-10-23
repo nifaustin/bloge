@@ -5,6 +5,6 @@ import Authorization from "../middleware/authentication";
 
 const commentRoutes = express.Router();
 
-commentRoutes.post("/create/:blogId/comment",Authorization, fileUpload.single("blogImage"),createComment);
-commentRoutes.get("/blog/:blogId/comment",Authorization,getBlogComments);
+commentRoutes.post("/create/:id",Authorization,createComment);
+commentRoutes.get("/get/:id",Authorization,getBlogComments);
 export default commentRoutes;

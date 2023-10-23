@@ -19,10 +19,6 @@
  *                 type: string
  *               author:
  *                 type: string
- *               authorP:
- *                 type: string
- *               Comments:
- *                 type: string 
  *           
  *     responses:
  *       200:

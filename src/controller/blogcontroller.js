@@ -63,11 +63,14 @@ export const getone = async (req,res)=>{
                 message: " the id is not faund",
             })
         }
+    const createViews = await blogmodel.findOneAndUpdate({_id: id},{$inc:{ views: 1 }},{new:true});
         return res.status(200).json({
-            status:"200",
-            message:"conglutration your data retrieved well by id",
-            data:getall,
-        });
+          status: "200",
+          message: "conglutration your data retrieved well by id",
+          data: {
+    ...getall._doc, 
+    views: getall.views,
+        }});
     } catch (error) {
         return res.status(500).json({
             statusbar:"500",

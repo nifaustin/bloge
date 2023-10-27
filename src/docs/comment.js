@@ -14,7 +14,7 @@
  *         description: The ID of the blog to update.
  *     requestBody:
  *       content:
- *         application/json:
+ *         multipart/form-data:
  *           schema:
  *             type: object
  *             properties:

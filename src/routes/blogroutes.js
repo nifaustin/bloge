@@ -2,6 +2,8 @@ import express from "express";
 import { createBlog, deleteInfo, getAll, getone, updateInfo } from "../controller/blogcontroller";
 import fileUpload from"../helper/multer";
 import Authorization from "../middleware/authentication";
+
+
 const blogRoutes = express.Router();
 
 blogRoutes.post("/create",Authorization, fileUpload.single("blogImage"),createBlog);
